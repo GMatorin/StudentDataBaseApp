@@ -45,8 +45,20 @@ public class Student {
                 tuitionBalance = tuitionBalance + costOfCourse;
             }
             System.out.println("Enrolled in: " + courses);
-            System.out.println("Tuition balance: " + tuitionBalance);
         }
+    }
 
+    public void viewBalance() {
+        System.out.println("Your balance is: $" + tuitionBalance);
+    }
+
+    public void payTuition() {
+        viewBalance();
+        System.out.print("Enter your payment: ");
+        Scanner in = new Scanner(System.in);
+        int pay = in.nextInt();
+        tuitionBalance = tuitionBalance - pay;
+        System.out.println("Thank you for you payment of: $" + pay);
+        viewBalance();
     }
 }

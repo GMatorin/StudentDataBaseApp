@@ -1,6 +1,5 @@
 package studentDataBaseApp;
 
-import javax.swing.plaf.synth.SynthUI;
 import java.util.Scanner;
 
 public class Student {
@@ -25,7 +24,6 @@ public class Student {
         this.gradeYear = in.nextInt();
 
         setStudentId();
-        System.out.println(firstName + " " + lastName + " " + gradeYear + " StudId: " + studentID);
     }
 
     private void setStudentId() {
@@ -44,7 +42,6 @@ public class Student {
                 courses = courses + "\n" + course;
                 tuitionBalance = tuitionBalance + costOfCourse;
             }
-            System.out.println("Enrolled in: " + courses);
         }
     }
 
@@ -60,5 +57,20 @@ public class Student {
         tuitionBalance = tuitionBalance - pay;
         System.out.println("Thank you for you payment of: $" + pay);
         viewBalance();
+    }
+
+    @Override
+    public String toString() {
+        return "Name: "
+                + firstName
+                + " "
+                + lastName
+                + "\nGrade level: "
+                + gradeYear
+                + "\nStudentID: "
+                + studentID
+                + "\nCourses enrolled: "
+                + courses
+                + "\nBalance: $" + tuitionBalance;
     }
 }
